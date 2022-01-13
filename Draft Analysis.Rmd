@@ -1,82 +1,81 @@
 ---
-title: "Draft Analysis"
+title: "Introduction to Theoretical and Applied Statistics - Final Project"
 author: "Koichi Osamura and Alessandra Oshiro"
-date: "12/8/2021"
+date: "1/6/2022"
+abstract: "Among the various topics within gender equality issues, political participation and representation compose a major debate arena in regard to the elaboration of more inclusive public policies, protection of rights and improved quality of life. The lack of equality in representativeness of female politicians is pointed out by researchers as a result from several issues, which include sociocultural factors, structural prejudice, among others. We verify the extent to which degrees of education influence the percentage of women in chamber across countries using a series of information obtained by merging the Barro-Lee dataset on educational attainment and the IPU 'Historical Data on Women in National Parliaments' on female representation. By examining a series of comparisons between regions and education levels by gender, as well as regressions to test our predictions, our analysis reveals that a strong correlation could not be identified, making our original hypotheses invalid."
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 bibliography: references.bib
 csl: chicago-author-date.csl
 ---
 
+\newpage
 
-Current research on gender issues indicates that the world is moving towards fairer conditions to women in several fields, and among these election of women to parliament and other positions in different countries are often examined [e.g., @holli_wass_2010; @mcelroy_marsh_2010]. There are several objects of study regarding voting on women candidates, which can go from the reasons why they are not well represented in parliaments [@atkeson_2003; @barnes_cassese_2017], to a perceived notion of reliability regarding involvement with corruption [@barnes_beaulieu_2014; @brollo_troiano_2016]. Even though the latter somehow represents a stereotype, we see these objects as paradoxical as fight against corruption is a major concern among voters regardless their party preferences, we believe there is a strong connection between citizens’ education levels and their comprehension on political affairs, which would lead to a change in the number of female politicians.  
+# 1. Introduction
 
-This study, therefore, aims at analyzing the extent to which education levels determine the likelihood of having female politicians in the parliament. If our hypothesis is correct, we expect to find that countries with an increase of educational attainment will also show an increase in the percentage of women in parliament. The theoretical explanation behind this assumption is twofold. First, as the population becomes more educated, gender biases and prejudices are left behind, which makes them less reluctant to vote for female politicians. Second, as more women get access to education, they can pursue political careers and influence further participation of voters, regardless their gender.  
-  
+Current research on gender issues indicates that the world is moving towards fairer conditions to women in several fields, and among these election of women to parliament and other positions in different countries are often examined [e.g., @holli_wass_2010; @mcelroy_marsh_2010]. There are several objects of study regarding voting on women candidates, which can go from the reasons why they are not well represented in parliaments [@atkeson_2003; @barnes_cassese_2017], to a perceived notion of reliability regarding involvement with corruption [@barnes_beaulieu_2014; @brollo_troiano_2016]. Even though the latter somehow represents a stereotype, we see these objects as paradoxical as fight against corruption is a major concern among voters regardless their party preferences, we believe there is a strong connection between citizens’ education levels and their comprehension on political affairs, which would lead to a change in the number of female politicians.
 
-### The relationship between education and prejudice toward women in politics
+This study, therefore, aims at analyzing the extent to which education levels determine the likelihood of having female politicians in the parliament. If our hypothesis is correct, we expect to find that countries with an increase of educational attainment will also show an increase in the percentage of women in parliament. The theoretical explanation behind this assumption is twofold. First, as the population becomes more educated, gender biases and prejudices are left behind, which makes them less reluctant to vote for female politicians. Second, as more women get access to education, they can pursue political careers and influence further participation of voters, regardless their gender.
 
-Several scholars provided thorough analyses on how population perceive politics and gender, either based on a speculative efficiency in determined fields such as finance or foreign relations for men, and social affairs or education for women [e.g., @barnes_beaulieu_2014; @denemark_ward_bean_2012; @dolan_2014], or based on access to information on candidates running for office and how parties mobilize their structure to support these candidates [@ditonto_hamilton_redlawsk_2014].  
+# 2. Literature Review and Theory
+## 2.1 The relationship between education and prejudice toward women in politics
 
-While most studies on gender and politics focus either on the stereotypical characteristics involving women participation in politics as politicians, or the differences regarding turnout and voting patterns between men and women [@espinal_zhao_2015; @hatemi_mcdermott_bailey_2012; @kaal_2015], we could not find studies related to what has been done to improve citizen comprehension on this issue. Even though women participation (e.g., voting rights) is a relatively new idea in many countries, we can affirm that this was only possible after the advancement of many social rights throughout the 20th century [@king_leigh_2010]. 
+Several scholars provided thorough analyses on how population perceive politics and gender, either based on a speculative efficiency in determined fields such as finance or foreign relations for men, and social affairs or education for women [e.g., @barnes_beaulieu_2014; @denemark_ward_bean_2012; @dolan_2014], or based on access to information on candidates running for office and how parties mobilize their structure to support those candidates [@ditonto_hamilton_redlawsk_2014].  
 
+While most studies on gender and politics focus either on the stereotypical characteristics involving women participation in politics as politicians, or the differences regarding turnout and voting patterns between men and women [@espinal_zhao_2015; @hatemi_mcdermott_bailey_2012; @kaal_2015], we could not find studies related to what has been done to improve citizen comprehension on this issue. Although women participation (e.g., voting rights) is a relatively new idea in many countries, we can affirm that this was only possible after the advancement of social rights throughout the 20th century [@king_leigh_2010]. 
 
-### Promoting women candidacy and incumbency
+## 2.2 Promoting women candidacy and incumbency
 
-As analyzed earlier, research on gender and politics tend to be focused on how people vote and therefore what are the best strategies to promote candidatures. In this section, we will examine the other side of this issue, which is the efforts to increase the number of women running for office as well as how do voters in general interpret this effect.  
+Research on gender and politics tend to be focused on how people vote and therefore what are the best strategies to promote candidatures. In this section, we examine the efforts to increase the number of women running for office as well as how do voters in general interpret this effect.  
 
-We already emphasized that much of the efforts that parties make refer to ensuring the running candidate is elected and a series of strategies lead to stimulating voter’s identification to the candidate, which often lead to a candidate who fits in a determined profile [@mcelroy_marsh_2010; @plutzer_zipp_1996; @rosenwasser_seale_1988; @schwindt-bayer_malecki_crisp_2010]. However, even though specific measures such as quotas – which will be discussed later – may be implemented and we may observe an increase in the number of women in parliament, it still does not necessarily represent a change in the societal structures that have been working as an impediment for women to effectively compose the political debate.  
+Much of the efforts that parties make refer to ensuring the running candidate is elected and a series of strategies lead to stimulating voter’s identification toward candidates, which often lead to a candidate who fits in a determined profile [@mcelroy_marsh_2010; @plutzer_zipp_1996; @rosenwasser_seale_1988; @schwindt-bayer_malecki_crisp_2010]. However, despite specific measures such as quotas may be implemented and we may observe an increase in the number of women in parliament, it still does not necessarily represent a change in the societal structures that have been working as an impediment for women to effectively compose the political debate.  
 
-Previous research analyzed how determined socio-demographic criteria influence people’s turnout, and among these it was verified that in places where the average years of education are higher, turnout is also higher, although eventual discrepancies on voters’ age and education also show that education may not necessarily be a defining point [@tambe_2016]. Nevertheless, we still need to verify whether years of education impact on voters’ understanding on social and political affairs and consequently a lower rejection to the idea of voting on female candidates.
-
-
-### Quotas
-
-While the purpose of this study is to analyze the impact of education in the number of women in parliament, it is important to consider the relevance of quotas in the electoral process. Among the reasons behind the implementation of quotas to allow more women to run for office and to be elected, there are ideas on promoting diversity not only of gender, but also approach on topics that are usually discussed in the parliament [@josefsson_2014], which somehow meet the already introduced stereotype notions on female involvement on subjects related to social rights, healthcare, etc.  
-
-Prejudice regarding assumptions on women capacity, either socially intrinsic or systematically perpetrated by political actors and media coverage, among others, are a major hindrance toward female candidature in many countries [@kittilson_fridkin_2008]. To overcome such reality, many countries started implementing quotas to ensure a minimum number of women running for office [@pande_ford_2012]. Although methods and numbers may vary, quotas appear to be effective on the increase of women in parliaments, but it is still unclear the effective change in voters’ perception about gender diversity in politics and the importance of ensuring a larger number of seats for women.
+Previous research analyzed how determined demographic criteria influence people’s turnout, and among these it was verified that in places where the average years of education are higher, turnout is also higher, although eventual discrepancies on voters’ age and education also show that education may not necessarily be a defining point [@tambe_2016]. Nevertheless, we still need to verify whether years of education impact on voters’ understanding on social and political affairs and consequently a lower rejection to the idea of voting on female candidates.
 
 
-### Method and data analysis
+# 3. Method and Data Analysis
 
-Considering what has been found in previous research on female rights and general acceptance of their inclusion in society, we will test two hypotheses.  
+## 3.1 Hypothesis
 
-*H1: More educated population leads to higher female representation in parliament*. While such hypothesis could sound as a mere assumption, we will compare average education years and the proportion of women in parliament. For the sake of obtaining a clear result, we decided to limit our scope by analyzing only countries with a unicameral system and the Lower House of those with a bicameral system, as in many countries the Upper House is usually composed by the same number of members per state or have a different election system.  
+Considering what has been found in previous research on female rights and general acceptance of their inclusion in society, we will test the following hypothesis: *More educated population leads to higher female representation in parliament*. While such hypothesis could sound as a mere assumption, we will compare average education years and the proportion of women in parliament. For the sake of obtaining a clear result, we decided to limit our scope by analyzing only countries with a unicameral system and the Lower House of those with a bicameral system, as in many countries the Upper House is usually composed by the same number of members per state or have a different election system.  
 
-*H2: Quotas on female representation do not influence the total number of elected women*. Although the enforcement of quotas, under the occurrence of penalties for the parties that do not meet the minimum threshold stipulated by electoral legislation, may represent an increase in the number of elected women in general, we will analyze if this increase is in fact a result from the quotas or if the latter is just a confounding factor that came alongside other changes in the political configuration.
-
-
-
-
-### Data Cleaning Process
+## 3.2 Data and Variable Information
 
 Our project aims at finding out whether educational attainment leads to higher female representation in the parliament. Given that we were not able to find one that included all the required information, the dataset for this analysis was built by selecting relevant variables from other datasets. 
 
-```{Data cleaning, echo = TRUE, eval = FALSE}
+For educational attainment, the explanatory variable, we have used the Barro-Lee dataset [@barro_lee_2013]. They provide data for most countries, with variables that take gender, and educational level into account. Therefore, educational attainment is measured as the percentage of the population (general, male, or female) that has at least some years of primary, secondary, or tertiary education, as well as the percentage that has no schooling. For our dataset, we have used all the different levels of education for the whole population, and for each gender. Moreover, given that the dataset has data for every five years, we have included the data for 2005, 2010, and 2015. 
+
+Our outcome variable is the percentage of women in chamber, that is, the percentage of women elected for the parliament. For this, we used the "Historical Data on Women in National Parliaments" dataset (IPU 2021). We have taken the results of the latest single and lower chamber elections taken place between 2005 and 2015 for each country. The upper chamber elections were excluded because the way in which its members are elected is not suitable for our research. Each of the selected observations was joined with the educational attainment variables closest in time: elections between 2005 and 2007 with the Barro-Lee data for 2005; elections between 2008 and 2012 with the Barro-Lee data for 2010; and the elections between 2013 and 2015 with the Barro-Lee data for 2015. In this way, our dataset has only one observation per country. 
+
+In relation to our second hypothesis, we have also included a variable for implemented electoral gender quotas for every country. This was taken from the QAROT dataset [@qarot], which also includes data about the approval of gender quotas. However, given that we are interested in analyzing whether gender quotas have any influence in the relationship between educational attainment and female representation in the parliament, we decided to include the variable for implemented quotas, rather than the one that indicates only a formal approval of the policy in the parliament. Finally, we have also included the electoral democracy index from the V-Dem dataset [@vdem] because it could also influence the relationship between the variables we are interested in. These two variables will be mostly used as controls when assessing the correlation coefficients and as covariates in our linear regression models. We attempted to work with a subset of the data in which we controlled for democracy index. However, we abandoned this approach because in the resulting dataset Europe was overrepresented and regions such as MENA and the Pacific had less than three observations. 
+
+Our final dataset ("final_dataset") was saved as an independent csv. file and is included in the "data" folder. Nevertheless, all the used datasets are also included in the folder, in case running the datacleaning code is of interest.
+
+```{Data cleaning, echo = FALSE, eval = FALSE}
 
 ## Importing datasets
 
 #Educational Attainment - Barro Lee Dataset
-BL_MF <- read.csv("~/Desktop/ITAS/Final Project/BL_v3_MF1564.csv")
-BL_M <- read.csv("~/Desktop/ITAS/Final Project/BL_v3_M1564.csv")
-BL_F <- read.csv("~/Desktop/ITAS/Final Project/BL_v3_F1564.csv")
+BL_MF <- read.csv("data/BL_v3_MF1564.csv")
+BL_M <- read.csv("data/BL_v3_M1564.csv")
+BL_F <- read.csv("data/BL_v3_F1564.csv")
 
 #Women in Chamber - IPU
 library(readxl)
-IPUdata <- read_excel("Desktop/ITAS/Final Project/women_in_parliament-historical_database-1945_to_2018 (3).xlsx",
+IPUdata <- read_excel("data/women_in_parliament-historical_database-1945_to_2018 (3).xlsx",
                       na = "NA")
 
 
 #Electoral Gender Quota - QAROT
-QAROT <- read.csv("~/Desktop/ITAS/Final Project/QAROTdata_HughesPaxtonClaytonZetterberg_CountryYear_V1_August2017.csv")
+QAROT <- read.csv("data/QAROTdata_HughesPaxtonClaytonZetterberg_CountryYear_V1_August2017.csv")
 ## Merging the Barro-Lee dataset
 library(dplyr)
 BL_MF_M <- left_join(BL_MF, BL_M, by = c("Country", "Year"))
 BL_all <- left_join(BL_MF_M, BL_F, by = c("Country", "Year"))
 
-#Electoral emocracy index - V-Dem
-vdem <- read.csv("~/Desktop/ITAS/Final Project/V-Dem-CY-Core-v11.1.csv")
+#Electoral democracy index - V-Dem
+vdem <- read.csv("data/V-Dem-CY-Core-v11.1.csv")
 
 #subsetting IPU by newest elections and chamber type
 names(IPUdata)[names(IPUdata) == 'Chamber Type'] <- "chamber_type"
@@ -137,10 +136,10 @@ final_dataset$mf_total_secondary <- final_dataset$mf_secondary + final_dataset$m
 final_dataset$m_total_secondary <- final_dataset$m_secondary + final_dataset$m_tertiary
 final_dataset$f_total_secondary <- final_dataset$f_secondary + final_dataset$f_tertiary
 
-write.csv(final_dataset, "~/Desktop/ITAS/final_dataset.csv")
+write.csv(final_dataset, "data/final_dataset.csv")
 ```
 
-### Variable Description
+## 3.3 Variable Description
 
 The following table provides information about the variables in our dataset. 
 
@@ -168,7 +167,8 @@ The following table provides information about the variables in our dataset.
  `mf_educational_attainment`      Percentage of the population with has at least some formal 
                                   education (`mf_primary` + `mf_secondary` + `mf_tertiary`)
                                   
- `mf_primary`                     Percentage of the population with at least some primary education                                   as their highest educational level
+ `mf_primary`                     Percentage of the population with at least some primary education as their highest 
+                                  educational level
                                   
  `mf_secondary`                   Percentage of the population with at least some secondary
                                   education as their highest educational level
@@ -176,14 +176,16 @@ The following table provides information about the variables in our dataset.
  `mf_total_secondary`             Percentage of the population with partial or complete secondary
                                   education (`mf_secondary` + `mf_tertiary`)
  
- `mf_tertiary`                    Percentage of the population with at least some tertiary education                                   as their highest educational level
+ `mf_tertiary`                    Percentage of the population with at least some tertiary education as their highest 
+                                  educational level
   
  `m_no_schooling`                 Percentage of male population with no schooling
  
  `m_educational_attainment`       Percentage of male population with has at least some formal 
                                   education (`m_primary` + `m_secondary` + `m_tertiary`)
                                   
- `m_primary`                      Percentage of male population with at least some primary education                                   as their highest educational level
+ `m_primary`                      Percentage of male population with at least some primary education as their highest
+                                  educational level
                                   
  `m_secondary`                    Percentage of male population with at least some secondary 
                                   education as their highest educational level
@@ -213,14 +215,14 @@ The following table provides information about the variables in our dataset.
                                   
  -------------------------------------------------------------------------------------------
  
-### Descriptive Statistics
+## 3.4 Descriptive Statistics 
+### 3.4.1 About the Sample
 
-
-```{r about the countries/elections}
+```{r about the countries/elections, echo = FALSE, message = FALSE}
 #Importing dataset and useful libraries
 edat_wic <- read.csv("final_dataset.csv")
 edat_wic <- subset(edat_wic, select = -1)
-library(dplyr)
+library(dplyr);
 
 #About the sample (countries and regions)
 dim_edat_wic <- dim(edat_wic)
@@ -242,16 +244,17 @@ quota_prop <- round(mean(edat_wic$implemented_quota)*100, digits = 2)
 quota_prop_region <- round(tapply(edat_wic$electoral_democracy_index, edat_wic$region, mean)*100, digits = 2)
 ```
 
-Our sample consists in `r dim_edat_wic[1]` observations. Each of them corresponds to the results of the latest parliamentary elections celebrated between 2005 and 2015 in each of the `r dim_edat_wic[1]` countries of the sample (only one observation per country). We have included 6 regions: the Americas (`r region_count[1,2]` countries), Asia (`r region_count[2,2]` countries), Europe (`r region_count[3,2]` countries), Middle East and North Africa (`r region_count [4,2]` countries), the Pacific region (`r region_count[5,2]` countries), and Sub-Saharan Africa (`r region_count[6,2]` countries). 
+Our sample consists of `r dim_edat_wic[1]` observations. Each of them corresponds to the results of the latest parliamentary elections celebrated between 2005 and 2015 in each of the `r dim_edat_wic[1]` countries of the sample (only one observation per country). We have included 6 regions: the Americas (`r region_count[1,2]` countries), Asia (`r region_count[2,2]` countries), Europe (`r region_count[3,2]` countries), Middle East and North Africa (`r region_count [4,2]` countries), the Pacific region (`r region_count[5,2]` countries), and Sub-Saharan Africa (`r region_count[6,2]` countries). 
 
 Some additional relevant information about the sample might be the type of chamber. As explained earlier, while we have included countries with both unicameral and bicameral parliaments, in the case of the latter, we have counted only lower chamber elections. Our sample includes `r ctype_count[1,2]` single chamber elections, and `r ctype_count[2,2]` lower chamber elections. 
 
-We have also included the electoral democracy index, given that it might be a confounding factor that requires to control for it. The index has been taken from the V-Dem dataset [@vdem]. The reason we have chosen an indicator for electoral democracy over other kinds of democracy is because the characteristics considered for this index are the most relevant for our research (check codebook, p. 43). The lowest electoral democracy index in our sample is `r min_dem`, while the highest is `r max_dem`. The average index is `r mean_dem` and the median is `r median_dem`. It is also interesting to look at the average for each region: America (`r mean_dem_region[1]`), Asia (`r mean_dem_region[2]`), Europe (`r mean_dem_region[3]`), Middle East and Northern Africa (`r mean_dem_region[4]`), the Pacific region (`r mean_dem_region[5]`), and Sub-Saharan Africa (`r mean_dem_region[6]`).
+In addition to that, the lowest electoral democracy index in our sample is `r min_dem`, while the highest is `r max_dem`. The average index is `r round(mean_dem, 3)` and the median is `r median_dem`. It is also interesting to look at the average for each region: Americas (`r mean_dem_region[1]`), Asia (`r mean_dem_region[2]`), Europe (`r mean_dem_region[3]`), Middle East and Northern Africa (`r mean_dem_region[4]`), the Pacific region (`r mean_dem_region[5]`), and Sub-Saharan Africa (`r mean_dem_region[6]`).
 
-Finally, a last control variable is the implementation of electoral gender quotas. This has been taken from the QAROT [@qarot] dataset, which also had information for the approval of gender quotas. Nevertheless, given that we are interested in controlling for the potential effects of the gender quotas, we decided to include the variable for implemented quotas, rather than the one that indicated only a formal approval in the parliament. Among the `r dim_edat_wic[1]` countries of our sample, `r quota_count[1,2]` did not have an implemented electoral gender quota in the election listed. On the other hand, `r quota_count[2,2]` did, which means that `r quota_prop`% of the countries in our sample had an implemented electoral quota gender. Again, it is interesting to see the differences between regions regarding the proportion of countries (among the ones in the sample) which had one at the time of the listed elections: America (`r quota_prop_region[1]`%), Asia (`r quota_prop_region[2]`%), Europe (`r quota_prop_region[3]`%), Middle East and Northern Africa (`r quota_prop_region[4]`%), the Pacific region (`r quota_prop_region[5]`%), and Sub-Saharan Africa (`r quota_prop_region[6]`%).
+Finally, among the `r dim_edat_wic[1]` countries of our sample, `r quota_count[1,2]` did not have an implemented electoral gender quota in the election listed. On the other hand, `r quota_count[2,2]` did, which means that `r quota_prop`% of the countries in our sample had an implemented electoral quota gender. Again, it is interesting to see the differences between regions regarding the proportion of countries (among the ones in the sample) which had one at the time of the listed elections: America (`r quota_prop_region[1]`%), Asia (`r quota_prop_region[2]`%), Europe (`r quota_prop_region[3]`%), Middle East and Northern Africa (`r quota_prop_region[4]`%), the Pacific region (`r quota_prop_region[5]`%), and Sub-Saharan Africa (`r quota_prop_region[6]`%).
 
+### 3.4.1.1 About the Explanatory Variable (Educational Attainment)
 
-```{r about the explanatory and outcome variables}
+```{r about the explanatory and outcome variables, echo = FALSE}
 
 #About the sample (educational attainment)
 
@@ -276,77 +279,132 @@ median_f_ed <- median(edat_wic$f_educational_attainment)
 mean_f_ed_region <- round(tapply(edat_wic$f_educational_attainment, edat_wic$region, mean), digits = 2)
 mean_f_tert_region <- round(tapply(edat_wic$f_tertiary, edat_wic$region, mean), digits = 2)
 
+```
+
+Given our research question, our explanatory variable is educational attainment. Although our dataset contains disagregate data for different educational levels (no schooling, primary, secondary, and tertiary), for our descriptive statistics we will define "educational attainment" as having at least some schooling, that is, having received some education regardless of the highest level and its completion. Therefore, the percentage of the population with "at least some schooling" is obtained by adding those with primary, secondary, and tertiary education indistinctively (`mf_educational_attainment` variable for the general population). 
+
+Having clarified that definition, let us analyze the distribution of educational attainment for the general population. In this regard, `r edat_wic$country[edat_wic$mf_educational_attainment == max_mf_ed]` has the highest percentage, which is `r max_mf_ed`%. On the opposite side, `r edat_wic$country[edat_wic$mf_educational_attainment == min_mf_ed]` has the lowest percentage, which is `r min_mf_ed`%. Measures of central tendency such as the mean and the median are also relevant. These are `r round(mean_mf_ed, 2)`% and `r median_mf_ed`% respectively. Taking this into account, 4 out of the 6 regions have a percentage of average educational attainment which is above the sample mean: Europe (`r mean_mf_ed_region[3]`%), the Americas (`r mean_mf_ed_region[1]`%), the Pacific region (`r mean_mf_ed_region[5]`%), and Asia (`r mean_mf_ed_region[2]`%). The regions which are below the sample mean are the Middle East and North Africa (MENA) region (`r mean_mf_ed_region[4]`%) and Sub-Saharan Africa [shortened as "SSA" in the plots] (`r mean_mf_ed_region[6]`%).
+
+```{r echo = FALSE, out.width = "75%", fig.align = 'center', fig.cap = "Total Educated Population per Region"}
 boxplot(mf_educational_attainment ~ region,
         data = edat_wic,
         ylab = "Total population with at least some schooling",
         xlab = "Region",
-        main = "Educated Population per Region",
+        #main = "Educated Population per Region",
         cex = 0.5,
         las = 1,
-        xaxt = "n")
+        xaxt = "n",
+        ylim = c(20, 100))
 axis(1, at = 1:6, labels = c("Americas", "Asia", "Europe", "MENA", "Pacific", "SSA"))
+abline(h = mean_mf_ed, lty = "dashed", col = "red")
+```
 
+For a more detailed account, *Figure 1* provides an overview of educational attainment across regions. As mentioned above, the MENA region and Sub-Saharan Africa are below the sample mean, which is indicated by the dashed red line. Then, the region with the least disperse data is Europe, which also has the highest median. On the contrary, Sub-Saharan Africa is the region with both the most disperse percentages of educational attainment and the lowest median among the regions. The following figures offer further information about the differences in educational attainment by gender across regions. 
+
+```{r echo = FALSE, out.width = "75%", fig.align = 'center', fig.cap = "Educated Male Population per Region"}
 boxplot(m_educational_attainment ~ region,
         data = edat_wic,
         ylab = "Male population with at least some schooling",
         xlab = "Region",
-        main = "Educated Male Population per Region",
+        #main = "Educated Male Population per Region",
         cex = 0.5,
         las = 1,
         xaxt = "n")
 axis(1, at = 1:6, labels = c("Americas", "Asia", "Europe", "MENA", "Pacific", "SSA"))
+abline(h = mean(edat_wic$m_educational_attainment), lty = "dashed", col = "red")
+```
 
+```{r echo = FALSE, out.width = "75%", fig.align = 'center', fig.cap = "Educated Female Population per Region"}
 boxplot(f_educational_attainment ~ region,
         data = edat_wic,
         ylab = "Female population with at least some schooling",
         xlab = "Region",
-        main = "Educated Female Population per Region",
+        #main = "Educated Female Population per Region",
         cex = 0.5,
         las = 1,
-        xaxt = "n")
+        xaxt = "n",
+        ylim = c(10,100))
 axis(1, at = 1:6, labels = c("Americas", "Asia", "Europe", "MENA", "Pacific", "SSA"))
+abline(h = mean(edat_wic$f_educational_attainment), lty = "dashed", col = "red")
+```
 
+Finally, it is important to point out that he dispersion in the results suggests that although a correlation can be pointed out, the distribution obtained in the boxplots points toward the absence of a causal relation between the two variables. On the one hand, by clustering those who received some degree of education in one group, we fail to verify differences that each country has in terms of educational standards.
 
+### 3.4.1.2 About the Outcome Variable (Women in Chamber)
+
+```{r echo = FALSE}
 #About the sample (wic)
-
 mean_wic <- mean(edat_wic$women_in_chamber)
 min_wic <- min(edat_wic$women_in_chamber)
 max_wic <- max(edat_wic$women_in_chamber)
 median_wic <- median(edat_wic$women_in_chamber)
 mean_wic_region <- round(tapply(edat_wic$women_in_chamber, edat_wic$region, mean), digits = 2)
-mean_wic_region <- round(tapply(edat_wic$women_in_chamber, edat_wic$region, mean), digits = 2)
+```
 
 
+Our outcome variable is the percentage of women in parliament. In this regard, the countries in our sample vary greatly. The country with the lowest percentage of women in parliament is `r edat_wic$country[edat_wic$women_in_parliament == min_wic]` with `r round(min_wic, 2)`%, while `r edat_wic$country[edat_wic$women_in_parliament == max_wic]` has the highest percentage with `r max_wic`%. For this variable, the sample mean is `r round(mean_wic, 3)` and the median is `r round(median_wic, 3)`. 
+
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "Percentage of Women in Chamber per Region"}
 boxplot(women_in_chamber ~ region,
         data = edat_wic,
         ylab = "Percentage of women in chamber",
         xlab = "Region",
-        main = "Percentage of Women in Chamber per Region",
+        #main = "Percentage of Women in Chamber per Region",
         cex = 0.5,
         las = 1,
         xaxt = "n")
 axis(1, at = 1:6, labels = c("Americas", "Asia", "Europe", "MENA", "Pacific", "SSA"))
+abline(h = mean(edat_wic$women_in_chamber), lty = "dashed", col = "red")
+```
+
+*Figure 4* shows that regardless of the percentage of the population with at least some schooling, the proportion of women in chamber does not vary significantly. In fact, even though the education levels in Europe and the MENA region differ drastically, we can observe a close median for both regions, although eventual differences in between the 25th and the 75th percentiles for each region. Based on these results, we could infer that our hypothesis is not true. 
+
+As observed in the previous section, each region has specific characteristics by country that would impact the results obtained, but the boxplot in *Figure 4* can be used as a initial proof that the correlation between both variables is insignificant.
+
+### 3.4.2 Correlation Coefficients and Plots
+
+After having an overview of our sample, we proceed to analyze the correlation between our variables of interest. For this, the control variables (i.e. `implemented_quota` and `electoral_democracy_index`) are taken into account, so that we can assess whether they should be included as covariates in our linear regression models. First, we calculate the correlation coefficients of our outcome variable (`women_in_chamber`) and the different educational levels included in the data set.
+
+*Figure 5* plots the percentage of educational attainment (i.e. at least some schooling) in each country against the percentage of women in chamber. The data for the general population, the male population, and the female population are distinguished by color. As we expected from the resulting correlation coefficients, the points in the plot draw almost a flat line, with a concentration of points in the lower right side of the plot. This is concentration in higher levels of educational attainment is understandable, as we are dealing with the percentage of the population with at least some schooling. Nevertheless, the important insight here is that most countries exhibit similar (low) percentages of women in chamber regardless of their percentage of educational attainment. Moreover, making a gender distinction in the data for educational attainment does not seem to make any significant difference. However, the correlation coefficients suggest that there is a difference, albeit hard to notice in the plot: 
+
+```{r echo = FALSE}
+
+wic_edat <- cor(edat_wic[c("women_in_chamber", 
+                           "mf_educational_attainment", 
+                           "m_educational_attainment", 
+                           "f_educational_attainment")])[,1]
+
+wic_total_secondary <- cor(edat_wic[c("women_in_chamber", 
+                                      "mf_total_secondary", 
+                                      "m_total_secondary", 
+                                      "f_total_secondary")])[,1]
+
+wic_tertiary <- cor(edat_wic[c("women_in_chamber", 
+                               "mf_tertiary", 
+                               "m_tertiary", 
+                               "f_tertiary")])[,1]
+
+tab_wic_edat <- rbind("At least some schooling" = wic_edat, "Secondary Education" = wic_total_secondary, "Tertiary Education" = wic_tertiary)
+
+knitr::kable(
+  tab_wic_edat[,],
+  align = "c",
+  digits = 3,
+  col.names = c("Women in Chamber", "General Pop.", "Males", "Females"),
+  caption = "Correlation Coefficient for % of Women in Chamber and % Disaggregate Educational Attainment"
+)
 
 ```
- 
-Our explanatory variable is the educational attainment of the population. For this, we have used the Barro-Lee dataset (@barro_lee_2013), which provides separate data about the highest educational level attained by the total population, males, and females. This measured in percentage of the population which has at least some years of primary, secondary, or tertiary education, as well as the percentage that has no schooling. We have used the data for 2005, 2010, and 2015, given that the dataset reports educational attainment for each country every 5 years. 
-
-Our outcome variable is the percentage of women in chamber, that is, the percentage of women elected for the parliament in the listed elections. As explained before, this data corresponds to the results of the latest election that took place between 2005 and 2015 for every country. Furthermore, the data has been taken from the IPU "Historical Data on Women in National Parliaments" dataset (@ipu_2021). The interpretation of each boxplot will be added for the final submission. 
 
 
-```{r correlations}
-
-wic_no_Schooling <- cor(edat_wic[c("women_in_chamber", "mf_no_schooling", "m_no_schooling", "f_no_schooling")])[1,]
-wic_edat <- cor(edat_wic[c("women_in_chamber", "mf_educational_attainment", "m_educational_attainment", "f_educational_attainment")])[1,]
-wic_total_secondary <- cor(edat_wic[c("women_in_chamber", "mf_total_secondary", "m_total_secondary", "f_total_secondary")])[1,]
-wic_tertiary <- cor(edat_wic[c("women_in_chamber", "mf_tertiary", "m_tertiary", "f_tertiary")])[1,]
-
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "Educated Population vs. Percentage of Women in Chamber"}
 par(xpd = TRUE, mar = c(5, 5, 5, 10))
 plot(edat_wic$mf_educational_attainment, edat_wic$women_in_chamber, 
-     main = "Educated Population vs. % of Women in Chamber", 
+     #main = "Educated Population vs. % of Women in Chamber", 
      ylab = "% of women in chamber", 
      xlab = "% of population with at least some education", 
      ylim = c(0,90), 
+     xlim = c(0, 100),
      las = 1,
      col = "green")
 points(x = edat_wic$m_educational_attainment, 
@@ -355,7 +413,7 @@ points(x = edat_wic$m_educational_attainment,
 points(x = edat_wic$f_educational_attainment, 
        y = edat_wic$women_in_chamber, 
        col = "red")
-legend(x = 105, 
+legend(x = 108, 
        y = 80, 
        c("Total Population", 
          "Male Population", 
@@ -363,37 +421,19 @@ legend(x = 105,
        col = c("green", "blue", "red"), 
        cex = 0.8, 
        pch = 1)
+```
 
-par(xpd = TRUE, mar = c(5, 5, 5, 10))
-plot(edat_wic$mf_no_schooling, edat_wic$women_in_chamber, 
-     main = "Uneducated Population vs. % of Women in Chamber", 
-     ylab = "% of women in chamber", 
-     xlab = "% of population with no schooling", 
-     ylim = c(0,90), 
-     xlim = c(0,90),
-     las = 1,
-     col = "green")
-points(x = edat_wic$m_no_schooling, 
-       y = edat_wic$women_in_chamber, 
-       col = "blue")
-points(x = edat_wic$f_no_schooling, 
-       y = edat_wic$women_in_chamber, 
-       col = "red")
-legend(x = 98, 
-       y = 80, 
-       c("Total Population", 
-         "Male Population", 
-         "Female Population"), 
-       col = c("green", "blue", "red"), 
-       cex = 0.8, 
-       pch = 1)
+The patterns observed in *Figure 5* are repeated when we restrict the analysis to higher educational levels. *Figure 6* and *Figure 7* also show a concentration of points in the lower section of the plot, despite them being more widely spread between the left and the right side. This indicates that countries show more differences in the percentage of their educated population for higher educational levels. Nevertheless, this does not seem to make any significant difference regarding the percentage of women in the parliament. 
+
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "Population With At Least Some Secondary Education vs. Percentage of Women in Chamber"}
 
 par(xpd = TRUE, mar = c(5, 5, 5, 10))
 plot(edat_wic$mf_total_secondary, edat_wic$women_in_chamber, 
-     main = "Population With At Least Some Secondary Education vs. \n % of Women in Chamber", 
+     #main = "Population With At Least Some Secondary Education vs. \n % of Women in Chamber", 
      ylab = "% of women in chamber", 
      xlab = "% of population with at least some secondary education", 
-     ylim = c(0,90), 
+     ylim = c(0,90),
+     xlim = c(0, 100),
      las = 1,
      col = "green")
 points(x = edat_wic$m_total_secondary, 
@@ -410,10 +450,12 @@ legend(x = 105,
        col = c("green", "blue", "red"), 
        cex = 0.8, 
        pch = 1)
+```
 
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "Population With At Least Some Tertiary Education vs. Percentage of Women in Chamber"}
 par(xpd = TRUE, mar = c(5, 5, 5, 10))
 plot(edat_wic$mf_tertiary, edat_wic$women_in_chamber, 
-     main = "Population With At Least Some Tertiary Education vs. \n % of Women in Chamber", 
+     #main = "Population With At Least Some Tertiary Education vs. \n % of Women in Chamber", 
      ylab = "% of women in chamber", 
      xlab = "% of population with at least some tertiary education", 
      ylim = c(0,90), 
@@ -435,121 +477,318 @@ legend(x = 60,
        cex = 0.8, 
        pch = 1)
 
+```
+
+
+Here again, the correlation coefficients provide interesting insights that are not easy to identify on the plots. Although the coefficients remain very low, there is an increase with higher education levels. For secondary education and tertiary education, it is still true that men show the lowest correlation coefficient and women show the highest one. Nevertheless, the correlation coefficients for secondary education (i.e. all those who have at least some secondary education) are higher than the one of the percentage of the population with at least some schooling: `r round(wic_total_secondary["mf_educational_attainment"], 3)` for the general population, `r round(wic_total_secondary["m_educational_attainment"], 3)` for the male population, and `r round(wic_total_secondary["f_educational_attainment"], 3)` for the female population. In a similar fashion, the correlation coefficients for tertiary education are higher than the secondary education ones: `r round(wic_tertiary["mf_educational_attainment"], 3)` for the general population, `r round(wic_tertiary["m_educational_attainment"], 3)` for the male population, and `r round(wic_tertiary["f_educational_attainment"], 3)`. Without leaving aside the fact that the correlation between the percentage of women in chamber and the educational attainment of the population is low, there seems to be some differences regarding gender and education level. 
+
+### 3.4.2.1 About the Control Variables 
+
+In this section, we analyze whether the control variables do make a difference in the correlation coefficients. If so, they will be taken into account when elaborating linear regression models. The first variable to assess is the existence of implemented electoral gender quotas. Given that one of our hypothesis is directly related to the effect of gender quotas, we decided not to work with a subset that includes only countries with implemented gender quotas or only countries without them. On the contrary, we decided to assess our analysis on the basis of the differences between the correlation coefficients in those countries with an implemented gender quota and those in which there are none. 
+
+The coefficients suggest that, be it with our without electoral gender quotas, the correlation between the percentage of women in chamber and the percentage of educational attainment remains low. This supports our hypothesis that electoral gender quotas do not influence the percentage of women in parliament. Nevertheless, the resulting coefficients are surprising in that the correlation is positive for the subset of countries *without* electoral gender quotas, but negative for the subset of countries *with* implemented gender quotas. This could indicate that, when there are implemented gender quotas, countries with higher percentages of population with at least some education tend to have lower percentages of women in chamber. This is an interesting differential effect of educational attainment. However, we believe that the correlation coefficients are too weak to represent a significant impact in the results.  
+
+
+```{r echo = FALSE}
+
+edat_wic_quota <- subset(edat_wic, subset = edat_wic$implemented_quota == 1)
+edat_wic_no_quota <- subset(edat_wic, subset = edat_wic$implemented_quota == 0)
+
+wic_quota <- cor(edat_wic_quota[c("women_in_chamber", 
+                                      "mf_educational_attainment", 
+                                      "m_educational_attainment", 
+                                      "f_educational_attainment")])[1,]
+
+wic_no_quota <- cor(edat_wic_no_quota[c("women_in_chamber", 
+                                      "mf_educational_attainment", 
+                                      "m_educational_attainment", 
+                                      "f_educational_attainment")])[1,]
+
+tab_wic_quota <- rbind("With quota" = wic_quota, "Without quota" = wic_no_quota)
+
+knitr::kable(
+  tab_wic_quota[,],
+  align = "c",
+  col.names = c("Women in Chamber", "Total", "Male", "Female"),
+  digits = 3,
+  caption = "Correlation Coefficient for Gender Quotas"
+)
 
 ```
 
-The correlation coefficients between percentage of women in chamber and educational attainment are very weak, regardless of the education level. They are also weak when we make the distinction between educated male and educated female population. Nevertheless, it is interesting to note that the correlation coefficient between percentage of women in chamber and the educational attainment of females (in every level) is slightly higher in contrast to men. 
+```{r echo = FALSE, results = 'hide'}
 
-Although the coefficients disprove our hypothesis, the difference between genders might indicate that female population has a bigger impact than male population in issues related to gender equality. 
+edat_wic_dem <- subset(edat_wic, subset = edat_wic$electoral_democracy_index >= mean_dem)
+edat_wic_low_dem <- subset(edat_wic, subset = edat_wic$electoral_democracy_index < mean_dem)
 
-We have plotted the percentage of women in chamber against all the different levels of educational attainment (at least some primary, no schooling, at least some secondary, and at least some tertiary). Moreover, our plots use different colors for the total population, the male population, and the female population. However, just as the correlation coefficients suggested, we see a flat line that indicates that there is a weak to none correlation between educational attainment and the percentage of women in chamber. 
+wic_democracy_ind <- cor(edat_wic_dem[c("women_in_chamber", 
+                               "mf_educational_attainment", 
+                               "m_educational_attainment", 
+                               "f_educational_attainment")])[1,]
 
-```{r correlation with controls}
+wic_low_democracy_ind <- cor(edat_wic_low_dem[c("women_in_chamber", 
+                               "mf_educational_attainment", 
+                               "m_educational_attainment", 
+                               "f_educational_attainment")])[1,]
 
-#for quotas
+wic_low_democracy_ind - wic_democracy_ind 
 
-quota_edat_wic <- subset(edat_wic, subset = edat_wic$implemented_quota == 1)
-no_quota_edat_wic <- subset(edat_wic, subset = edat_wic$implemented_quota == 0)
+cor_wic_dem <- cor(edat_wic$women_in_chamber, edat_wic$electoral_democracy_index)
 
-quota_wic_no_Schooling <- cor(quota_edat_wic[c("women_in_chamber", "mf_no_schooling", "m_no_schooling", "f_no_schooling")])[1,]
-quota_wic_edat <- cor(quota_edat_wic[c("women_in_chamber", "mf_educational_attainment", "m_educational_attainment", "f_educational_attainment")])[1,]
-quota_wic_total_secondary <- cor(quota_edat_wic[c("women_in_chamber", "mf_total_secondary", "m_total_secondary", "f_total_secondary")])[1,]
-quota_wic_tertiary <- cor(quota_edat_wic[c("women_in_chamber", "mf_tertiary", "m_tertiary", "f_tertiary")])[1,]
+tab_wic_dem <- rbind("Democratic" = wic_democracy_ind, "Non democratic" = wic_low_democracy_ind)
+```
 
-no_quota_wic_no_Schooling <- cor(no_quota_edat_wic[c("women_in_chamber", "mf_no_schooling", "m_no_schooling", "f_no_schooling")])[1,]
-no_quota_wic_edat <- cor(no_quota_edat_wic[c("women_in_chamber", "mf_educational_attainment", "m_educational_attainment", "f_educational_attainment")])[1,]
-no_quota_wic_total_secondary <- cor(no_quota_edat_wic[c("women_in_chamber", "mf_total_secondary", "m_total_secondary", "f_total_secondary")])[1,]
-no_quota_wic_tertiary <- cor(no_quota_edat_wic[c("women_in_chamber", "mf_tertiary", "m_tertiary", "f_tertiary")])[1,]
+Another relevant variable is the electoral democracy index. As clarified before, working with a subset that controls for this variable would require us to use a notoriously unbalanced sample. Therefore, we decided to assess the confounding potential of this variable in the same way as we did with the existence of implemented electoral gender quotas. Again, if the correlation coefficients between both groups show substantial differences, we plan on including this variable in some of our models. 
 
-par(xpd = TRUE, mar = c(5, 5, 5, 10))
-plot(quota_edat_wic$mf_educational_attainment, quota_edat_wic$women_in_chamber, 
-     main = "Educated Population vs. % of Women in Chamber", 
+```{r echo = FALSE}
+knitr::kable(
+  tab_wic_dem[,],
+  align = "c",
+  col.names = c("Women in Chamber", "Total", "Male", "Female"),
+  digits = 3,
+  caption = "Correlation Coefficient for Democracy Index"
+)
+```
+
+Surprisingly, the correlation coefficients for women in chamber and the percentage of the population with at least some schooling are negative both in the subset of countries with a democracy index below the sample mean and in the subset of countries with one equal or above the mean. Nevertheless, like with the quotas, the coefficients are too weak to indicate a significant correlation. Moreover, the electoral democracy index does not seem to have a strong effect on the relationship between our variables of interest, as the difference between the correlation coefficients of both subsets is also low. Finally, another coefficient that supports that electoral democracy index is not that likely to be a confounding factor is that the correlation coefficient between women in chamber and electoral democracy index is also very low: `r cor_wic_dem`. 
+
+The analysis of the effect of these potential confounding factors suggests that they do not have a very strong influence in the relationship between the percentage of women in chamber and the percentage of educational attainment. Therefore, they will be not included in all of our linear regression models. 
+
+## 3.5 Linear Regression Models
+
+After the descriptive statistics, in this section, we try different linear regression models. These have been built taking into account the main insights provided by the exploration of the correlation coefficients. 
+
+The first group of models uses educational attainment as a predictor for the percentage of women in chamber, that is, it uses the percentage of the population with at least some schooling as explanatory variable. The resulting coefficients further support the insight obtained from the correlation coefficients. 
+
+```{r echo = FALSE, results = 'hide'}
+
+f_edat_fit <- lm(formula = women_in_chamber ~ f_educational_attainment, data = edat_wic)
+coef(f_edat_fit)
+summary(f_edat_fit)$r.squared
+
+m_edat_fit <- lm(formula = women_in_chamber ~ m_educational_attainment, data = edat_wic)
+coef(m_edat_fit)
+summary(m_edat_fit)$r.squared
+
+edat_fit <- lm(formula = women_in_chamber ~ f_educational_attainment + m_educational_attainment, data = edat_wic)
+coef(edat_fit)
+summary(edat_fit)$r.squared
+
+```
+
+
+```{r, results = 'asis', echo = FALSE}
+stargazer::stargazer(f_edat_fit, m_edat_fit, edat_fit, type = "latex",
+                     title = "f_edat_fit, m_edat_fit and edat_fit Regression Models",
+                     intercept.top = T, intercept.bottom = F,
+                     covariate.labels = c("Intercept", "Educational Attainment (M)", "Educational Attainment (F)"), 
+                     dep.var.labels = c("Women in Chamber"),
+                     header = FALSE)
+
+```
+
+For the first model (`f_edat_fit`), we took the percentage of female population with at least some schooling (`f_educational_attainment`) as the predictor for percentage of women in chamber. Here, the coefficients indicate that for each additional percentage of female population with at least some schooling, the percentage of women in chamber increases by `r coef(f_edat_fit)["f_educational_attainment"]`. Although this is not a significant increase, the relationship is even weaker when we used the percentage of male population with at least some schooling as the predictor. According to our second model (`m_edat_fit`), for every additional unit in percentage of male population with at least some schooling, the percentage of women in chamber increases by `r coef(m_edat_fit)["m_educational_attainment"]`. In both models, the positive coefficient suggests that there is a positive impact of educational attainment on the percentage of women in chamber. However, the increase is hardly significant enough to claim that either of the chosen variables are good predictors of the percentage of women in chamber. This, as well as the fact that female educational attainment is a slightly better predictor, can also be seen in the low r-squared scores: `r summary(f_edat_fit)$r.squared` for the `f_edat_fit` model and `r summary(m_edat_fit)$r.squared` for the `m_edat_fit` model. These models are plotted in *Figure 8*. 
+
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "f_edat_fit and m_edat_fit Models (1 and 2)"}
+
+par(xpd = FALSE)
+plot(edat_wic$f_educational_attainment, edat_wic$women_in_chamber, 
+     main = "Linear Regression Models with Educational Attainment Predictors", 
      ylab = "% of women in chamber", 
      xlab = "% of population with at least some education", 
      ylim = c(0,90), 
      las = 1,
-     col = "green")
-points(x = no_quota_edat_wic$mf_educational_attainment, 
-       y = no_quota_edat_wic$women_in_chamber, 
+     col = "red")
+points(x = edat_wic$m_educational_attainment, 
+       y = edat_wic$women_in_chamber, 
        col = "blue")
-legend(x = 105, 
-       y = 80, 
-       c("Implemented Quota", 
-         "No Quota"), 
-       col = c("green", "blue"), 
+legend(x = 13, 
+       y = 85, 
+       c("m_edat_fit", 
+         "f_edat_fit"), 
+       col = c("steelblue2", "orangered"), 
        cex = 0.8, 
        pch = 1)
-
-par(xpd = TRUE, mar = c(5, 5, 5, 10))
-plot(quota_edat_wic$f_educational_attainment, quota_edat_wic$women_in_chamber, 
-     main = "Educated Female Population vs. % of Women in Chamber", 
-     ylab = "% of women in chamber", 
-     xlab = "% of population with at least some education", 
-     ylim = c(0,90), 
-     las = 1,
-     col = "green")
-points(x = no_quota_edat_wic$f_educational_attainment, 
-       y = no_quota_edat_wic$women_in_chamber, 
-       col = "blue")
-legend(x = 105, 
-       y = 80, 
-       c("Implemented Quota", 
-         "No Quota"), 
-       col = c("green", "blue"), 
-       cex = 0.8, 
-       pch = 1)
-
-par(xpd = TRUE, mar = c(5, 5, 5, 10))
-plot(quota_edat_wic$f_tertiary, quota_edat_wic$women_in_chamber, 
-     main = "Female Population With Some Tertiary Education \n vs. % of Women in Chamber", 
-     ylab = "% of women in chamber", 
-     xlab = "% of population with at least some education", 
-     ylim = c(0,90), 
-     xlim = c(0, 60),
-     las = 1,
-     col = "green")
-points(x = no_quota_edat_wic$f_tertiary, 
-       y = no_quota_edat_wic$women_in_chamber, 
-       col = "blue")
-legend(x = 65, 
-       y = 80, 
-       c("Implemented Quota", 
-         "No Quota"), 
-       col = c("green", "blue"), 
-       cex = 0.8, 
-       pch = 1)
-
-#for democracy
-#We still need to work on this. The main issue is finding the threshold for what to consider "democratic" and what not. 
+abline(f_edat_fit, col = "orangered")
+abline(m_edat_fit, col = "steelblue2")
 ```
 
-When controlling for quotas, the correlation is slightly stronger. However, it is not strong enough to support our hypothesis. It is interesting to see, however, that the correlation is stronger for countries without a quota. Also, female education seems to be a stronger predictor than male education (even if education is not a strong predictor of percentage of women in chamber)
+*Figure 9* shows our third model, constructed using educational attainment (i.e., population with at least some schooling) as a predictor yielded interesting results. For the `edat_fit` model, we used both the percentage of female population with at least some schooling (`f_educational_attainment`) and the percentage of male population with at least some schooling (`m_educational_attainment`) as predictors. The coefficients indicate that, when holding the percentage of male population with at least some education constant, for each additional unit in female educational attainment, there is an increase of `r coef(edat_fit)["f_educational_attainment"]` in the percentage of women in the parliament. On the other hand, when holding the percentage of female population with at least some education constant, a unit increase in male educational attainment results in a decrease of `r coef(edat_fit)["m_educational_attainment"]*-1` in the percentage of women in parliament. Not only was the negative coefficient unexpected, but also the considerable increase in the percentage of the variation that this model is able to explain, as the r-squared of `edat_fit` is `r summary(edat_fit)$r.squared`. Moreover, the p-values of both coefficients in this model are below 0.5, which indicates that it is unlikely that we would get these or more extreme coefficients when assuming that there is no effect between the covariates and the outcome variable.
 
-```{r regressions}
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "edat_fit Model (3)"}
+edat_values <- c(0:100)
 
-model1 <- lm(formula = women_in_chamber ~ mf_educational_attainment, data = edat_wic)
-summary(model1)$r.squared
-
-model2 <- lm(formula = women_in_chamber ~ m_educational_attainment, data = edat_wic)
-summary(model2)$r.squared
-
-model3 <- lm(formula = women_in_chamber ~ f_educational_attainment, data = edat_wic)
-summary(model3)$r.squared
-
-model4 <- lm(formula = women_in_chamber ~ f_tertiary, data = edat_wic)
-summary(model4)$r.squared
-
-model5 <- lm(formula = women_in_chamber ~ f_tertiary:implemented_quota, data = edat_wic)
-summary(model5)$r.squared
-
-model6 <- lm(formula = women_in_chamber ~ f_tertiary + f_secondary + f_primary, data = edat_wic)
-summary(model6)$r.squared
-
-model7 <- lm(formula = women_in_chamber ~ mf_tertiary + mf_secondary + mf_primary, data = edat_wic)
-summary(model7)$r.squared
+edat_pred <- predict(edat_fit, 
+                           newdata = list(f_educational_attainment = edat_values, m_educational_attainment = edat_values))
+plot(edat_wic$f_educational_attainment,
+     edat_wic$women_in_chamber,
+     col = "red",
+     ylab = "% of women in chamber",
+     xlab = "% of population with at least some schooling",
+     xlim = c(0,100))
+points(edat_wic$m_educational_attainment,
+       edat_wic$women_in_chamber,
+       col = "steelblue2")
+points(edat_values,
+       edat_pred,
+       type = "l",
+       col = "forestgreen")
 
 ```
 
-The plotting and the interpretation of the coefficients is still lacking. This was due to lack of time, but it will be added for the final submission.
+### 3.5.2 Linear Regression Models with Female Dissagregated Educational Attainment
 
-### Bibliography
+```{r echo = FALSE, results = 'hide'}
+
+f_tertiary_edat_fit <- lm(formula = women_in_chamber ~ f_tertiary, data = edat_wic)
+coef(f_tertiary_edat_fit)
+summary(f_tertiary_edat_fit)$r.squared
+
+```
+
+Taking into account the insight about educational levels, we decided to try a fourth model that considered the highest education level as a predictor. Building up on our findings about gender differences, we restricted it to the percentage of female population with at least tertiary education. In this case, the coefficient is higher than when we used the percentage of female population with at least some schooling. The `f_tertiary_edat_fit` model predicts that for each additional unit in the percentage of female population with tertiary education, the percentage of women in chamber increases in `r coef(f_tertiary_edat_fit)["f_tertiary"]`. We also have an r-squared score that is better than the `f_edat_fit` model: `r summary(f_tertiary_edat_fit)$r.squared`. Given that both models use only one predictor, the improvement in the r-squared score is most likely an indicator that the percentage of female population tertiary education can explain more of the variation that the percentage of women with at least some education. *Figure 10* shows the regression line in the scatterplot that shows the percentage of women in chamber against the percentage of women with tertiary education. 
+
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "tertiary_edat_fit Model (4)"}
+edat_values <- c(0:100)
+
+f_edat_pred <- predict(f_tertiary_edat_fit, 
+                           newdata = list(f_tertiary = edat_values), times = 101)
+
+plot(edat_wic$f_tertiary,
+     edat_wic$women_in_chamber,
+     ylab = "% of women in chamber",
+     xlab = "% of female population with tertiary education",
+     xlim = c(0,100),
+     col = "red")
+points(edat_values,
+       f_edat_pred,
+       type = "l",
+       col = "forestgreen")
+```
+
+```{r echo = FALSE, results = 'hide'}
+
+f_tertiary_m_tertiary_fit <- lm(formula = women_in_chamber ~ f_tertiary + m_tertiary, data = edat_wic)
+coef(f_tertiary_m_tertiary_fit)
+summary(f_tertiary_m_tertiary_fit)$r.squared
+
+f_tertiary_m_edat_fit <- lm(formula = women_in_chamber ~ f_tertiary + m_educational_attainment, data = edat_wic)
+coef(f_tertiary_m_edat_fit)
+summary(f_tertiary_m_edat_fit)$r.squared
+
+```
+
+For a fifth and sixth model, following the insights provided by the third model, we tried to improve our model by adding the percentage of male educational attainment as a covariate. The fifth model, `f_tertiary_m_tertiary_fit`, adds the percentage of male population with tertiary education as a covariate. The coefficients indicate that, holding the percentage of male population with tertiary education constant, an additional unit in the percentage of female population with tertiary education leads to an increase of `r coef(f_tertiary_m_tertiary_fit)["f_tertiary"]` in the percentage of women in chamber. On the contrary, but in accordance to previous models, the coefficient for `m_tertiary` indicates that, holding the percentage of female population with tertiary education constant, for each additional unit in the percentage of men with tertiary education, we can expect a decrease of `r coef(f_tertiary_m_tertiary_fit)["m_tertiary"] * -1` in the percentage of women in chamber. This fifth model shows an improvement in comparison to the last one, as the r-squared score is `r summary(f_tertiary_m_tertiary_fit)$r.squared` slightly higher. Nevertheless, it is important to be aware that this improvement could be just a mechanical increase produced by including additional covariates. 
+
+It is more fair to compare the fifth model to the sixth model, as they both use two covariates and differ only in one. In contrast to the `f_tertiary_m_tertiary_fit` model, `f_tertiary_m_edat_fit` uses the percentage of male population with at least some education. The coefficients suggest a slightly lower effect in the percentage of women in chamber, but the r-squared score is higher for this sixth model: `r summary(f_tertiary_m_edat_fit)$r.squared`. The coefficients indicate that  holding the percentage of male population with at least some education constant, an additional unit in the percentage of female population with tertiary education leads to an increase of `r coef(f_tertiary_m_edat_fit)["f_tertiary"]` in the percentage of women in chamber. On the contrary, holding the percentage of female population with tertiary education constant, for each additional unit in the percentage of men with at least some education, we can expect a decrease of `r coef(f_tertiary_m_edat_fit)["m_tertiary"] * -1` in the percentage of women in chamber. The fact that, according to the r-squared scores, the model with lower coefficients explains more of the variation, supports that the hypothesized effect of educational attainment in percentage of women in parliament is too low to be significant. This is in accordance to what the correlation coefficients and the plots showed.
+
+*Figure 11* and *Figure 12* show the regression line for the fifth and the sixth model, respectively. 
+
+```{r, results = 'asis', echo = FALSE}
+stargazer::stargazer(f_tertiary_edat_fit, f_tertiary_m_tertiary_fit, f_tertiary_m_edat_fit, type = "latex",
+                     title = "f_tertiary_edat_fit, f_tertiary_m_tertiary_fit and f_tertiary_m_edat_fit Regression Models",
+                     intercept.top = T, intercept.bottom = F,
+                     covariate.labels = c("Intercept", "Tertiary education (F)", "Tertiary education (M)", "Educational Attainment (M)"),
+                     dep.var.labels = c("Women in Chamber"),
+                     header = FALSE)
+
+```
+
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "f_tertiary_m_tertiary Model (5)"}
+
+edat_values <- c(0:100)
+
+f_m_tert <- predict(f_tertiary_m_tertiary_fit, 
+                           newdata = list(f_tertiary = edat_values, m_tertiary = edat_values), times = 101)
+
+plot(edat_wic$f_tertiary,
+     edat_wic$women_in_chamber,
+     ylab = "% of women in chamber",
+     xlab = "% of population with tertiary education",
+     xlim = c(0,100),
+     col = "red")
+points(edat_wic$m_tertiary,
+       edat_wic$women_in_chamber,
+       col = "blue")
+points(edat_values,
+       f_m_tert,
+       type = "l",
+       col = "forestgreen")
+legend(x = 85, 
+       y = 80, 
+       c("Males", 
+         "Females"), 
+       col = c("blue", "red"), 
+       cex = 0.8, 
+       pch = 1)
+
+```
+
+```{r echo = FALSE, out.width = "80%", fig.align = 'center', fig.cap = "f_tertiary_m_edat_fit Model (6)"}
+edat_values <- c(0:100)
+
+f_tertiary_m_edat_fit_pred <- predict(f_tertiary_m_edat_fit, 
+                           newdata = list(f_tertiary = edat_values, m_educational_attainment = edat_values), times = 101)
+
+plot(edat_wic$f_tertiary,
+     edat_wic$women_in_chamber,
+     ylab = "% of women in chamber",
+     xlab = "% of female population with tertiary education \n % of the male population with at least some schooling",
+     xlim = c(0,100),
+     col = "red")
+points(edat_wic$m_educational_attainment,
+       edat_wic$women_in_chamber,
+       col = "blue")
+points(edat_values,
+       f_tertiary_m_edat_fit_pred,
+       type = "l",
+       col = "forestgreen")
+legend(x = 40, 
+       y = 80, 
+       c("Males w/ some schooling", 
+         "Females w/ tertiary ed."), 
+       col = c("blue", "red"), 
+       cex = 0.8, 
+       pch = 1)
+
+```
+
+
+### 3.5.2 Linear Regression Models with Quota and Democracy Index
+
+```{r echo = FALSE, results = 'hide'}
+
+full_fit <- lm(formula = women_in_chamber ~ f_educational_attainment + m_educational_attainment + f_tertiary + m_tertiary + implemented_quota + electoral_democracy_index, data = edat_wic)
+coef(full_fit)
+summary(full_fit)$r.squared
+
+```
+
+```{r, results = 'asis', echo = FALSE}
+stargazer::stargazer(full_fit, type = "latex",
+                     title = "Full_fit Regression Model",
+                     intercept.top = T, intercept.bottom = F,
+                     covariate.labels = c("Intercept", "Educational Attainment (F)", "Educational Attainment (M)", "Tertiary education (F)", "Tertiary education (M)", "Implemented quota", "Electoral Democracy Index"), 
+                     dep.var.labels = c("Women in Chamber"),
+                     header = FALSE)
+
+```
+
+Taking into account the feedback received for the first draft, our last model (`full_fit`) includes all the predictors used in previous models, as well as the variables for implemented gender quota (`implemented_quota`) and electoral democracy index (`electoral_democracy_index`). The r-squared score improves greatly, as it rises to `r summary(full_fit)$r.squared`. Nevertheless, it is important again to keep in mind that it could be a product of including considerably more covariates than in previous models. We have not plotted this model because of its complexity, but plotting and other tools would be helpful to assess whether this model actually improves the predictions. 
+
+Some of the resulting coefficients contribute to our confusion, as they are different from what the correlation coefficients made us expect. This is particularly the case for the `implemented_quota` variable, given that the correlation coefficients calculated for the subset of countries with implemented quotas suggested a negative correlation between the percentage of women in chamber and the percentage of the population with at least some schooling. Here, the coefficient suggests that, holding all the other variables constant, the implementation of quotas should increase the percentage of women in chamber by `r coef(full_fit)["implemented_quota"]`. Although we are unsure, we believe this might suggest that percentages of educational level both for male and female population has an impact on the effectiveness of electoral gender quotas in increasing the percentage of women in the parliament. In contrast, the coefficient for the electoral_democracy_index suggests that each additional unit in electoral democracy index leads to a decrease of `r coef(full_fit)["electoral_democracy_index"] * -1` in the percentage of women in parliament. The previously found weak correlation between democracy index and percentage of women in chamber make this coefficient slightly less surprising, nevertheless, it is just as unexpected to see a negative coefficient according to this model. 
+
+Finally, although the coefficients for `f_educational_attainment` (`r coef(full_fit)["f_educational_attainment"]`) and `m_educational_attainment` (`r coef(full_fit)["m_educational_attainment"]`) vary when we include these additional covariates, the change is not too pronounced. This might suggest that, despite the r-squared score being significantly higher, the additional covariates do not make that much of significant improvements compared to the model that included only `f_educational_attainment` and `m_educational_attainment`. If the variation is mostly caused by the inclusion of the variables for percentage of the population with tertiary education, then this is in accordance with our findings when calculating the potential differences that the existence of implemented electoral gender quotas or higher electoral democracy indexes might cause. Nevertheless, in order to assess this, we would require to construct additional models that allow us to individually compare the impact of each additional covariate. This is would be an interesting task, but we will not be able to provide additional models in this study, because of the space and time limits. 
+
+
+# 4. Concluding Discussion
+
+Our findings do not provide enough empirical support to prove our hypothesis about higher percentages of educational attainment leading to higher percentages of women elected for parliament. Both our correlation calculations and our models do identify some influence, but the coefficients are always too low to indicate a significant causal effect. 
+
+Nevertheless, despite not being able to prove the hypothesized relationship between our variables of interest, our findings suggest interesting venues for further research. One of the issues that require further investigation is, for example, the reasons behind the different effects that female educational attainment and male educational attainment have on the percentage of women in the parliament. As some of our linear regression models have shown, when including both of them as covariates, there is a clear tendency of female educational attainment increasing female representation in the parliament, while male educational attainment lowers it. This, however, cannot be used as support for our hypothesis because these numbers only appear when holding the opposite gender's educational attainment constant. We believe that this suggests that the way in which female and male educational attainment seem to cancel out each other should be further researched. As mentioned before, another venue for investigation is the effect that democracy levels and electoral gender quotas have in the percentages of female representation in the parliament. As our last model indicates, the relationship between these variables could not be completely clarified by our analysis. 
+
+Finally, we believe that it would be worth repeating this study with a different dataset. This, because different measurements and more balanced data might bring clearer results. 
+
+
+\newpage
+# 5. References
