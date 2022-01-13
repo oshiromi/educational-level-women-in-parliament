@@ -4,8 +4,8 @@ author: "Koichi Osamura and Alessandra Oshiro"
 date: "1/6/2022"
 abstract: "Among the various topics within gender equality issues, political participation and representation compose a major debate arena in regard to the elaboration of more inclusive public policies, protection of rights and improved quality of life. The lack of equality in representativeness of female politicians is pointed out by researchers as a result from several issues, which include sociocultural factors, structural prejudice, among others. We verify the extent to which degrees of education influence the percentage of women in chamber across countries using a series of information obtained by merging the Barro-Lee dataset on educational attainment and the IPU 'Historical Data on Women in National Parliaments' on female representation. By examining a series of comparisons between regions and education levels by gender, as well as regressions to test our predictions, our analysis reveals that a strong correlation could not be identified, making our original hypotheses invalid."
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 bibliography: references.bib
 csl: chicago-author-date.csl
 ---
