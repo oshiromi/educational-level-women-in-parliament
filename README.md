@@ -2,7 +2,7 @@
 
 This project was the final assignment for the "Introduction to Theoretical and Applied Statistics" course at the Central European University. It was jointly done by Koichi Osamura and me, following the guidelines provided by Prof. Mariyana Angelova and Ahmeni Mehrez (TA). We were interested in finding whether more educated citizens lead to a higher percentage of women in the parliament. For that, we combined and cleaned several datasets (listed below). Then, we did descriptive statistics and performed linear regression to test our hypothesis. The results did not provide sufficient evidence to reject the null hypothesis. 
 
-## Data sets
+## Datasets
 The final dataset is not provided. However, the markdown has the code for joining and cleaning the individual datasets. 
 
 Barro, Robert J., and JongWha Lee. 2013. “A New Data Set of Educational Attainment in the World, 1950–2010.” Journal of Development Economics 104: 184–98. https://doi.org/10.1016/j.jdeveco.2012.10.001.
